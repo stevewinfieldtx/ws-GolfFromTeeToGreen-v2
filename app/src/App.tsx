@@ -69,10 +69,10 @@ function App() {
   // Membership tiers
   const membershipTiers = [
     {
-      name: 'Lifetime Founding Member',
+      name: 'Lifetime Access',
       price: '$497',
       originalPrice: '$1,997',
-      badge: 'LIMITED: First 200 Only',
+      badge: 'Best Value',
       badgeColor: 'bg-amber-500',
       features: [
         'Lifetime access to all video content',
@@ -80,10 +80,10 @@ function App() {
         'Private community access',
         'Quarterly live Q&A sessions',
         'Swing analysis discounts',
-        'Founding member recognition',
+        'Early supporter recognition',
         'Never pay again - ever'
       ],
-      cta: 'Claim Founding Member Spot',
+      cta: 'Get Lifetime Access',
       highlighted: true
     },
     {
@@ -123,10 +123,10 @@ function App() {
 
   // Video categories preview
   const videoCategories = [
-    { name: 'The Driver', count: '24 videos', icon: Target, image: '/driver.jpg' },
-    { name: 'Iron Play', count: '31 videos', icon: TrendingUp, image: '/iron-shot.jpg' },
-    { name: 'Short Game', count: '28 videos', icon: Trophy, image: '/putting.jpg' },
-    { name: 'Course Strategy', count: '18 videos', icon: Globe, image: '/hero-bg.jpg' },
+    { name: 'The Driver', count: 'Lessons', icon: Target, image: '/driver.jpg' },
+    { name: 'Iron Play', count: 'Lessons', icon: TrendingUp, image: '/iron-shot.jpg' },
+    { name: 'Short Game', count: 'Lessons', icon: Trophy, image: '/putting.jpg' },
+    { name: 'Course Strategy', count: 'Lessons', icon: Globe, image: '/hero-bg.jpg' },
   ];
 
   return (
@@ -184,7 +184,7 @@ function App() {
                   className="ml-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white border-0 shadow-lg shadow-blue-500/20"
                 >
                   <Crown className="w-4 h-4 mr-2" />
-                  Become a Member
+                  Explore Membership
                 </Button>
               </motion.div>
             </div>
@@ -211,7 +211,7 @@ function App() {
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="pt-4">
                   <Button onClick={() => { setShowMembershipDialog(true); setIsMenuOpen(false); }} className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white">
                     <Crown className="w-4 h-4 mr-2" />
-                    Become a Member
+                    Explore Membership
                   </Button>
                 </motion.div>
               </div>
@@ -239,25 +239,25 @@ function App() {
             <motion.div variants={fadeInUp} className="mb-6">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-medium">
                 <Sparkles className="w-4 h-4" />
-                Founding Member Spots Available
+                Early Access Available
               </span>
             </motion.div>
 
             {/* Main Headline */}
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-100 to-blue-400 bg-clip-text text-transparent">
-                37 Years of Golf Truth
+                Learn the Golf Swing
               </span>
               <br />
-              <span className="text-slate-400">Now Online</span>
+              <span className="text-slate-400">the Right Way</span>
             </motion.h1>
 
             {/* Subheadline */}
             <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto">
-              Learn the real mechanics of a golf swing from a coach who's been teaching since 1986
+              Simple, clear instruction built on fundamentals — from a coach teaching since 1986. Train anywhere. Improve faster.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
-              100+ instructional videos • Private community • Monthly live sessions • Learn from anywhere
+              Structured video lessons • New lessons added over time • Optional coaching • Learn from anywhere
             </motion.p>
 
             {/* CTA Buttons */}
@@ -265,15 +265,15 @@ function App() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" onClick={() => scrollToSection('contact')}
                   className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white text-lg px-8 py-6 shadow-xl shadow-blue-500/20 border-0 font-bold">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Book a Lesson
+                  <Crown className="w-5 h-5 mr-2" />
+                  Explore Membership
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="outline" onClick={() => setShowMembershipDialog(true)}
+                <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')}
                   className="border-2 border-amber-500/50 text-amber-400 hover:bg-amber-500/10 text-lg px-8 py-6">
-                  <Crown className="w-5 h-5 mr-2" />
-                  Become a Member
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Book a Lesson
                 </Button>
               </motion.div>
             </motion.div>
@@ -282,9 +282,9 @@ function App() {
             <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
               {[
                 { value: '37+', label: 'Years Teaching' },
-                { value: '1000+', label: 'Students Helped' },
-                { value: '100+', label: 'Video Lessons' },
-                { value: '200', label: 'Founding Spots' },
+                { value: 'Decades', label: 'of Coaching Experience' },
+                { value: 'Growing', label: 'Video Library' },
+                { value: 'Step-by-step', label: 'Skill Building' },
               ].map((stat, index) => (
                 <div key={index} className="text-center p-4 bg-slate-900/50 rounded-xl border border-blue-900/30">
                   <div className="text-2xl md:text-3xl font-bold text-blue-400">{stat.value}</div>
@@ -307,11 +307,10 @@ function App() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer} className="text-center mb-16">
-            <motion.span variants={fadeInUp} className="text-blue-400 font-semibold tracking-wider uppercase text-sm">Choose Your Path</motion.span>
+            <motion.span variants={fadeInUp} className="text-blue-400 font-semibold tracking-wider uppercase text-sm">Start Here</motion.span>
             <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">Membership Options</motion.h2>
             <motion.p variants={fadeInUp} className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Join thousands of golfers learning the truth about the golf swing. 
-              <span className="text-amber-400 font-semibold"> Only 200 founding member spots available.</span>
+              Choose the option that fits how you learn. Start with structured lessons, then add coaching if you want faster feedback.
             </motion.p>
           </motion.div>
 
@@ -358,8 +357,7 @@ function App() {
             <motion.span variants={fadeInUp} className="text-blue-400 font-semibold tracking-wider uppercase text-sm">What's Inside</motion.span>
             <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">Video Library</motion.h2>
             <motion.p variants={fadeInUp} className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Over 100 instructional videos covering every aspect of the game. 
-              New content added every month.
+              A growing library of lessons covering every part of the game — built around fundamentals that hold up under pressure. New lessons are added as the library expands.
             </motion.p>
           </motion.div>
 
@@ -508,10 +506,10 @@ function App() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer} className="text-center mb-16">
-            <motion.span variants={fadeInUp} className="text-amber-400 font-semibold tracking-wider uppercase text-sm">Limited Time</motion.span>
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">Join the Founding 200</motion.h2>
+            <motion.span variants={fadeInUp} className="text-amber-400 font-semibold tracking-wider uppercase text-sm">Get Started</motion.span>
+            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">Ready to Improve Your Game?</motion.h2>
             <motion.p variants={fadeInUp} className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Get lifetime access for a one-time payment. Once these 200 spots are gone, they're gone forever.
+              Choose the option that fits how you learn. Start with structured lessons, then add coaching if you want faster feedback.
             </motion.p>
           </motion.div>
 
@@ -521,7 +519,7 @@ function App() {
               <motion.div variants={fadeInUp} className="bg-slate-900/50 border border-amber-500/30 rounded-2xl p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Crown className="w-8 h-8 text-amber-400" />
-                  <h3 className="text-2xl font-bold text-white">Lifetime Founding Member</h3>
+                  <h3 className="text-2xl font-bold text-white">Lifetime Access</h3>
                 </div>
                 <div className="mb-6">
                   <span className="text-5xl font-bold text-white">$497</span>
@@ -543,7 +541,7 @@ function App() {
                 </ul>
                 <div className="flex items-center gap-2 text-amber-400 text-sm">
                   <Users className="w-4 h-4" />
-                  <span>Only 200 spots available</span>
+                  <span>One-time payment, lifetime access</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -551,7 +549,7 @@ function App() {
             {/* Form */}
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-white mb-2">Reserve Your Spot</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Get Started</h3>
                 <p className="text-slate-400 mb-6">Enter your info and we'll send you membership details.</p>
                 <form onSubmit={handleContactSubmit} className="space-y-4">
                   <div>
@@ -568,7 +566,7 @@ function App() {
                   </div>
                   <Button type="submit" className="w-full bg-gradient-to-r from-amber-500 to-amber-400 text-slate-900 font-bold py-6">
                     <Crown className="w-5 h-5 mr-2" />
-                    Claim My Founding Member Spot
+                    Get Membership Details
                   </Button>
                   <p className="text-xs text-slate-500 text-center">
                     No payment required now. We'll contact you with next steps.
@@ -595,7 +593,7 @@ function App() {
                 <span className="font-bold text-xl text-white">Golf From Tee to Green</span>
               </div>
               <p className="text-slate-400 max-w-md mb-6">
-                37 years of golf instruction, now available online. Learn the truth about your swing from anywhere in the world.
+  Online golf instruction built on fundamentals — from a coach teaching since 1986. Learn from anywhere in the world.
               </p>
               <div className="flex gap-4">
                 <a href="mailto:James@GolfFromTeeToGreen.com" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
@@ -644,7 +642,7 @@ function App() {
               Become a Member
             </DialogTitle>
             <DialogDescription className="text-slate-400">
-              Choose the membership that's right for you. Founding member spots are limited.
+              Choose the membership that's right for you.
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 mt-4">
@@ -652,8 +650,8 @@ function App() {
             <div className="bg-gradient-to-r from-amber-950/50 to-slate-900 border border-amber-500/30 p-4 rounded-lg">
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <p className="font-bold text-white">Lifetime Founding Member</p>
-                  <p className="text-amber-400 text-sm">Only 200 spots</p>
+                  <p className="font-bold text-white">Lifetime Access</p>
+                  <p className="text-amber-400 text-sm">Best value</p>
                 </div>
                 <div className="text-right">
                   <p className="text-2xl font-bold text-white">$497</p>
@@ -661,7 +659,7 @@ function App() {
                 </div>
               </div>
               <Button onClick={() => { setShowMembershipDialog(false); scrollToSection('contact'); }} className="w-full bg-amber-500 text-slate-900 font-bold hover:bg-amber-400">
-                Claim Founding Spot
+Get Lifetime Access
               </Button>
             </div>
 
