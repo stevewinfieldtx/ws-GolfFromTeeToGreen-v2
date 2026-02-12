@@ -621,9 +621,12 @@ function App() {
             </div>
           </div>
 
-          <div className="border-t border-slate-800 pt-8 text-center">
+          <div className="border-t border-slate-800 pt-8 text-center space-y-2">
             <p className="text-slate-500 text-sm">
               &copy; {new Date().getFullYear()} Golf From Tee to Green. All rights reserved.
+            </p>
+            <p className="text-slate-600 text-xs">
+              Created by <a href="https://nynimpact.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-blue-400 transition-colors">NYN Impact</a>
             </p>
           </div>
         </div>
